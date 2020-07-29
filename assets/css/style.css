@@ -57,7 +57,7 @@ html, body {
 
 
 /* menu-wrapper */
-.menu-button {width: 4.6875rem; height: 4.6875rem;  position: absolute; top: 50%; right: 0; transform: translateY(-50%); background: none transparent; border: 0;}
+.menu-button {width: 4.6875rem; height: 4.6875rem;  position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: none transparent; border: 0;}
 .menu-button.wrap {z-index: 9999;}
 .menu-button-item {position: absolute; top: 0; left: 0; bottom: 0; right: 0;}
 .menu-button-item svg {display: block; width: 100%; height: 100%; fill:#fff; pointer-events: none; }
@@ -95,7 +95,7 @@ html, body {
 .icon.animation:after { top: 0; transform: rotate(-45deg); transition : top 300ms cubic-bezier(0.23, 1, 0.32, 1),transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);}   
 
 /* box-wrap */
-.box-wrap   {position: fixed; top: 0; max-width: 100%; bottom: 0; right: 0; left: 0; z-index: 9000; overflow-x: hidden; transition: all 1s cubic-bezier(.645,.045,.355,1);}
+.box-wrap   {position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: 9000; transition: all 1s cubic-bezier(.645,.045,.355,1);}
 .box-wrap.show {z-index: 9998;}
 .box-wrap .box1 {width: 11.1111111111%; height: 50vh;overflow: hidden;position: relative;float: left;}
 .box-wrap .box2 {width: 38.8888888889%; height: 50vh;overflow: hidden;position: relative; float: left;}
@@ -105,7 +105,7 @@ html, body {
 
 
 /* line */
-#line {position: fixed; top: 0; right: 0; max-width: 100%; overflow-x: hidden;bottom: 0; left: 0; z-index: 9999; pointer-events: none; opacity: 0; transition: opacity .3s cubic-bezier(.215,.61,.355,1);}
+#line {position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999; pointer-events: none; opacity: 0; transition: opacity .3s cubic-bezier(.215,.61,.355,1);}
 .line {position: relative; height: 100%; display: inline-block; vertical-align: top; font-size: 1rem; padding-left: 0;}
 .line.sline {width: 11.1111111111%;}
 .line.sline:after {content: ''; position: absolute;top: 0;right: 0;bottom: 0;border-right: 1px solid #797979;transition: transform .6s cubic-bezier(.215,.61,.355,1);transform-origin: center top;transform: scaleY(1);opacity: 0.14;}
@@ -115,7 +115,7 @@ html, body {
 
 
 /* menu */
-.menu {position: fixed; top: 0; max-width: 100%; bottom: 0; right: 0; left: 0; overflow-x: hidden; z-index: -1; overflow: hidden; transition: z-index 1s ease;}
+.menu {position: fixed; top: 0; bottom: 0; right: 0; left: 0; overflow: hidden; z-index: -1; overflow: hidden; transition: z-index 1s ease;}
 .menu.show {z-index: 9999;}
 .menu .menu-left {width: 50%; position: absolute; left: 0; top: 41vh; overflow: hidden; }
 .menu .menu-left a {display: inline-block; color: #030303; font-size: 24px; padding-top: 10px;}
@@ -154,13 +154,13 @@ html, body {
 .sec1 .text .skew:hover:after {animation: swoosh .7s ease-in;}
 .sec1 .text .skew:active:before {background-color: #030d1b;}
 
-
 /* 메인 glitch */
 .glitch {position: relative; filter: blur(1px);}
 .glitch:before, 
 .glitch:after {content: "WELCOME\ATAEWOON PORTFOLIO"; white-space:pre; position: absolute; top: 0; left: 0; right: 0; overflow: hidden; color: #fff;}
 .glitch:before {left: 8px; text-shadow: 2px 0 #3ee7ac; animation: glitchEffect 2s infinite linear;}
 .glitch:after {left: 4px; text-shadow: -2px 0 #ff0a60; animation: glitchEffect 2s infinite linear;}
+
 
 
 
@@ -241,8 +241,8 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 .sec3 img {display: block; width: 100%; height: auto;}
 .sec3 .cont_left {position: relative; width: 100%; height: 650px;}
 .sec3 .cont_left .s3_img {position: absolute; left: 0; top: 0; width: 650px; z-index: 1;}
-.sec3 .cont_left .revealer {content: ''; position: absolute; left: 0; top: 0; width: 50%; height: 50%; background: #3EE7AC; transform: scaleX(0); pointer-events: none; z-index: 2;}
-.sec3 .cont_left .s3_text {position: absolute; height: 30%;  right: 0; width: 50%; padding: 6% -0px; z-index: 1;}
+.sec3 .cont_left .revealer {content: ''; position: absolute; left: 0; top: 0; width: 50%; height: 60%; background: #3EE7AC; transform: scaleX(0); pointer-events: none; z-index: 2;}
+.sec3 .cont_left .s3_text {position: absolute; right: 0; height: 30%; width: 50%; padding: 6% -0px; z-index: 1;}
 .sec3 .cont_left .s3_text .s3_tit {color: #3EE7AC; font-size: 24px; font-weight: 700;}
 .sec3 .cont_left .s3_text .h4_tit {color: #fff; font-size: 65px; font-weight: bold; line-height: 1;}
 .sec3 .cont_left .s3_text .s3_desc {margin-top: 20px; font-size: 16px; color: #d6d6d6;}
@@ -251,30 +251,29 @@ body.active .sec1 .text .skew            {opacity: 1; transform: translateY(0%);
 .sec3 .cont_right {position: relative; width: 100%; height: 650px;}
 .sec3 .cont_right .s3_img {position: absolute; right: 0; top: 0; width: 650px;}
 .sec3 .cont_right .revealer {content: ''; position: absolute; right: 0; top: 0; width: 50%; height: 60%; background: #3EE7AC; transform: scaleX(0); pointer-events: none; z-index: 2;}
-.sec3 .cont_right .s3_text {position: absolute; left: 0; height: 30%; width: 50%; padding: 6% -0px;}
+.sec3 .cont_right .s3_text {position: absolute; left: 0;height: 30%; width: 50%; padding: 6% -0px;}
 .sec3 .cont_right .s3_text .s3_tit {color: #3EE7AC; font-size: 24px; font-weight: 700;}
 .sec3 .cont_right .s3_text .h4_tit {color: #fff; font-size: 65px; font-weight: bold; line-height: 1;}
 .sec3 .cont_right .s3_text .s3_desc {margin-top: 20px; font-size: 16px; color: #d6d6d6;}
 .sec3 .cont_right .s3_text .mSite {display: block; color:#3EE7AC; font-size: 16px; font-weight: 700;}
 
-.sec3 .cont_left .skew {cursor: pointer; outline: none;background-color: transparent; padding: 0; color: #fff; padding: 20px 60px; display: inline-block; border: none;  margin-top: 20px;}
-.sec3 .cont_left .skew span {position: relative; top: -1%; z-index: 3; letter-spacing: 1px;}
-.sec3 .cont_left .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 150%; height: 50px; border: 1px solid #3EE7AC; z-index: 2;}
+.sec3 .cont_left .skew {cursor: pointer; outline: none; position: relative; background-color: transparent; padding: 0; color: #fff; padding: 20px 60px; display: inline-block; border: none; margin-top: 20px;}
+.sec3 .cont_left .skew span {z-index: 3; letter-spacing: 1px;}
+.sec3 .cont_left .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 80%; height: 50px; border: 1px solid #3EE7AC; z-index: 2;}
 .sec3 .cont_left .skew span:before {display: block; transform: translate(-50%, -50%) skew(-20deg); transform-origin: center center; z-indeX: -1;}
 .sec3 .cont_left .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE7AC; border: 1px solid transparent; z-index: -1;}
 .sec3 .cont_left .skew:hover span:before {animation: fill .5s ease-out; animation-fill-mode: forwards;}
 .sec3 .cont_left .skew:hover:after {animation: swoosh .7s ease-in;}
 .sec3 .cont_left .skew:active:before {background-color: #030d1b;}
 
-.sec3 .cont_right .skew {cursor: pointer; outline: none;background-color: transparent; padding: 0; color: #fff; padding: 20px 60px; display: inline-block; border: none; margin-top: 20px;}
-.sec3 .cont_right .skew span {position: relative; top: -1%; z-index: 3; letter-spacing: 1px;}
-.sec3 .cont_right .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 150%; height: 50px; border: 1px solid #3EE7AC; z-index: 2;}
+.sec3 .cont_right .skew {cursor: pointer; outline: none; position: relative; background-color: transparent; padding: 0; color: #fff; padding: 20px 60px; display: inline-block; border: none; margin-top: 20px;}
+.sec3 .cont_right .skew span {z-index: 3; letter-spacing: 1px;}
+.sec3 .cont_right .skew span:before {content: '';position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) skewX(-20deg); width: 80%; height: 50px; border: 1px solid #3EE7AC; z-index: 2;}
 .sec3 .cont_right .skew span:before {display: block; transform: translate(-50%, -50%) skew(-20deg); transform-origin: center center; z-indeX: -1;}
 .sec3 .cont_right .skew:after {transition: all 100ms ease-out; content: ''; position: absolute; left: 0; top: 0; transform: skewX(-20deg) scaleX(0); width: 100%; height: 100%; background-color: #3EE7AC; border: 1px solid transparent; z-index: -1;}
 .sec3 .cont_right .skew:hover span:before {animation: fill .5s ease-out; animation-fill-mode: forwards;}
 .sec3 .cont_right .skew:hover:after {animation: swoosh .7s ease-in;}
 .sec3 .cont_lecont_rightft .skew:active:before {background-color: #030d1b;}
-
 
 /********** sec3 animation **********/
 .sec3 .strapline                     {opacity: 0; transform: translateY(40px);transition:all 0.5s ease;}
