@@ -153,7 +153,8 @@
 
 /* 메인 glitch */
 .glitch {position: relative; filter: blur(1px);}
-.glitch:before, .glitch:after {content: "HI,THERE"; position: absolute; top: 0; left: 0; right: 0; overflow: hidden; color: #fff;}
+.glitch:before, 
+.glitch:after {content: "WELCOME\ATAEWOON PORTFOLIO"; white-space:pre; position: absolute; top: 0; left: 0; right: 0; overflow: hidden; color: #fff;}
 .glitch:before {left: 8px; text-shadow: 2px 0 #3ee7ac; animation: glitchEffect 2s infinite linear;}
 .glitch:after {left: 4px; text-shadow: -2px 0 #ff0a60; animation: glitchEffect 2s infinite linear;}
 
